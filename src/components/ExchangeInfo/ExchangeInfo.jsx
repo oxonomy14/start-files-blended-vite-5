@@ -1,6 +1,14 @@
 import styles from './ExchangeInfo.module.css';
+import { selectExchangeInfo } from '../../redux/currency/selectors';
+import { useSelector } from 'react-redux';
 
-const ExchangeInfo = ({ amount, from, to, rate, result }) => {
+const ExchangeInfo = () => {
+  const exchangeInfo = useSelector(selectExchangeInfo);
+
+  if (!exchangeInfo) return null;
+
+  const { amount, from, to, rate, result } = exchangeInfo;
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.box}>
