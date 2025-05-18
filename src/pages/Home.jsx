@@ -30,7 +30,7 @@ const Home = () => {
         )}
         <ExchangeForm />
         {isLoading && <Loader />}
-        {exchangeInfo && <ExchangeInfo />}
+        {exchangeInfo && <ExchangeInfo {...exchangeInfo} />}
         {isError && (
           <Heading
             error
